@@ -26,7 +26,7 @@ typedef struct {
 
 
 int main(int argc, const char * argv[]) {
-    printf("Hello, World!\n");
+    printf("Dumme svin!\n");
     return ERR_NONE;
 }
 
