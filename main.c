@@ -2,7 +2,7 @@
 //  main.c
 //  ship and stuff
 //
-//  Created by Victoria Chen on 29/11/20.
+//  Created by Victoria Chen and Kasper Schnack on 29/11/20.
 //  Copyright © 2020 cuteppl. All rights reserved.
 //
 
@@ -36,6 +36,7 @@ int *Human_UI()
 	int row;
 	char column;
 	int *choice;
+	choice = (int *) malloc(2*sizeof(int));
 	while(1){
 		printf("Where will you shoot? (1-10 / a-j)\n");
 		scanf("%d %c", &row, &column);
