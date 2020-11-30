@@ -150,5 +150,7 @@ char *read_ship_grid(short row_size, short column_size, int *ship_count) {
 }
 
 //  free things
-void free() {
+void free_mem(char* shot_grid, char* ship_grid) {
+    free(shot_grid);
+    free(ship_grid);
 }
