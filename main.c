@@ -2,7 +2,7 @@
 //  main.c
 //  ship and stuff
 //
-//  Created by Victoria Chen on 29/11/20.
+//  Created by Victoria Chen and Kasper Schnack on 29/11/20.
 //  Copyright © 2020 cuteppl. All rights reserved.
 //
 
