@@ -7,6 +7,7 @@
 //
 
 #include <stdio.h>
+#include <string.h>
 
 // error message to prevent overflow
 #define ERR_NONE                    0
