@@ -2,7 +2,7 @@
 //  main.c
 //  ship and stuff
 //
-//  Created by Victoria Chen on 29/11/20.
+//  Created by Victoria Chen and Kasper Schnack on 29/11/20.
 //  Copyright © 2020 cuteppl. All rights reserved.
 //
 
@@ -44,12 +44,13 @@ typedef struct {
 int get_grid(short row, short column, int column_size) ;
 int is_illegal(short row, short column, short row_size, short column_size);
 void render(void);
+int *Human_UI();
 
 int main(int argc, const char * argv[]) {
     
     //specify column size
-    
-    printf("Dumme svin!\n");
+    int *test = Human_UI();
+    printf("%d %d", test[0], test[1]);
     render();
     return ERR_NONE;
 }
@@ -116,6 +117,25 @@ int get_grid(short row, short column, int column_size) {
     return (row * (column_size) + column);
 }
 
+int *Human_UI()
+{
+	int row;
+	char column;
+	int *choice;
+	choice = (int *) malloc(2*sizeof(int));
+	while(1){
+		printf("Where will you shoot? (1-10 / a-j)\n");
+		scanf("%d %c", &row, &column);
+		if (row >= 1 && row <= 10 && column >=97 && column < 107){
+			choice[0] = row-1;
+			choice[1] = column-97;
+			break;
+		}
+		printf("Invalid input!!!\n");
+	}
+	return choice;
+}
+
 // get the grid for ships
 char *read_ship_grid(short row_size, short column_size, int *ship_count) {
     char *ship_grid; int i; short row, column, length, is_vertical;
@@ -147,6 +167,7 @@ char *read_ship_grid(short row_size, short column_size, int *ship_count) {
     }
     
     return ship_grid;
+
 }
 
 //  free things
