@@ -7,10 +7,19 @@
 //
 
 #include <stdio.h>
-#include <string.h>
+#include <stdlib.h>
+#include <math.h>
+#include <assert.h>
 
 // error message to prevent overflow
-#define ERR_NONE                    0
+#define ERR_NONE    0
+
+// grid struct
+typedef struct {
+    short row;
+    short column;
+} cell_t;
+
 
 int main(int argc, const char * argv[]) {
     // insert code here...
