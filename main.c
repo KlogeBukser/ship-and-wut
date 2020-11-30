@@ -25,9 +25,19 @@ typedef struct {
 } cell_t;
 
 
+// helper functions, move later accordingly
+int get_grid(short row, short column, int column_size) {
+    // to get the index of a cell in the array using its coordinate
+    return (row * (column_size) + column);
+}
+
 int main(int argc, const char * argv[]) {
+<<<<<<< HEAD
     printf("Hello, World!\n");
     printf("Haj!\n");
+=======
+    printf("Dumme svin!\n");
+>>>>>>> cbfe0236e9fe558414acee7ca8decf778f24d44b
     return ERR_NONE;
 }
 
