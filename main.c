@@ -32,12 +32,8 @@ int get_grid(short row, short column, int column_size) {
 }
 
 int main(int argc, const char * argv[]) {
-<<<<<<< HEAD
     printf("Hello, World!\n");
     printf("Haj!\n");
-=======
-    printf("Dumme svin!\n");
->>>>>>> cbfe0236e9fe558414acee7ca8decf778f24d44b
     return ERR_NONE;
 }
 
