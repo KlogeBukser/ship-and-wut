@@ -7,8 +7,15 @@
 //
 
 #include <stdio.h>
+#include <string.h>
+
+// error message to prevent overflow
+#define ERR_NONE                    0
 
 int main(int argc, const char * argv[]) {
+    // insert code here...
     printf("Hello, World!\n");
-    return 0;
+    return ERR_NONE;
 }
+
+
