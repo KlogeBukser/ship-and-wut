@@ -45,7 +45,10 @@ void render(void);
 void graph(short column_size, short row_size, char *shot_grid, char *ship_grid);
 char *create_shotgrid(short row_size, short column_size);
 char *read_ship_grid(short row_size, short column_size, int *ship_count);
-int take_shot(short row_size, short column_size, char *shot_grid, char *ship_grid);
+int take_shot(short row_size, short column_size, char *shot_grid, char *ship_grid); fub
+
+// kasper's helper func
+int *Human_UI();
 
 int main(int argc, const char * argv[]) {
     
@@ -163,6 +166,25 @@ int get_grid(short row, short column, int column_size) {
     return (row * (column_size) + column);
 }
 
+int *Human_UI()
+{
+	int row;
+	char column;
+	int *choice;
+	choice = (int *) malloc(2*sizeof(int));
+	while(1){
+		printf("Where will you shoot? (1-10 / a-j)\n");
+		scanf("%d %c", &row, &column);
+		if (row >= 1 && row <= 10 && column >=97 && column < 107){
+			choice[0] = row-1;
+			choice[1] = column-97;
+			break;
+		}
+		printf("Invalid input!!!\n");
+	}
+	return choice;
+}
+
 // get the grid for ships
 char *read_ship_grid(short row_size, short column_size, int *ship_count) {
     char *ship_grid; int i; short row, column, length, is_vertical;
@@ -198,6 +220,7 @@ char *read_ship_grid(short row_size, short column_size, int *ship_count) {
     }
     
     return ship_grid;
+
 }
 
 //  free things
