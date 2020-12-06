@@ -176,24 +176,23 @@ char *place_ships(short row_size, short column_size, int ship_count) {
         ship_grid[i] = 0;
     }
     
-    printf("give a ship, in the format of [row, column, length, is_vertical] \n");
     for (i=0;i<ship_count;i++) {
-         if (4 == scanf("[%hd,%hd,%hd,%hd] ",&row, &column, &length, &is_vertical)) {
-               for (i=0;i<length;i++) {
-                   if (is_illegal(row, column, row_size, column_size)) {
-                       printf("illegal bitch!!! \n");
-                       break;
-                   }
-                   ship_grid[get_grid(row, column, column_size)] = 1;
-                   if (is_vertical) {
-                       column++;
-                   }
-                   else {
-                       row++;
-                   }
-
-               }
-         }
+        printf("give a ship, in the format of [row, column, length, is_vertical] \n");
+        if (4 == scanf("[%hd,%hd,%hd,%hd] ",&row, &column, &length, &is_vertical)) {
+            for (i=0;i<length;i++) {
+                if (is_illegal(row, column, row_size, column_size)) {
+                    printf("illegal bitch!!! \n");
+                    break;
+                }
+                ship_grid[get_grid(row, column, column_size)] = 1;
+                if (is_vertical) {
+                    column++;
+                }
+                else {
+                    row++;
+                }
+            }
+        }
     }
     
     return ship_grid;
