@@ -33,6 +33,9 @@
 #define MISS_SHOT   'X'
 #define HIT_SHOT    'O'
 
+// Define ASCII
+#define ASCII_a 97
+
 // grid struct
 typedef struct {
     short row;
@@ -69,11 +72,33 @@ int *shoot_ship()
 }
 
 
+
+int *shoot_ship(short row_size, short column_size)
+{
+	int row;
+	char column;
+	int *result;
+	result = (int *) malloc(2*sizeof(int));
+	while(1){
+		printf("Where will you shoot? (1-%d / a-%c)\n", row_size+1, column_size+ASCII_a);
+		scanf("%d %c", &row, &column);
+		if (row >= 1 && row <= (row_size + 1) && column >= ASCII_a && column <= (column_size + ASCII_a)){
+			result[0] = row - 1;
+			result[1] = column - ASCII_a;
+			break;
+		}
+		printf("Invalid input!!!\n");
+	}
+	return result;
+}
+
 int main(int argc, const char * argv[]) {
-    
     int ship_count = SHIP_COUNT, *shot, result;
     char *shotgrid, *shipgrid;
     
+    int *result = shoot_ship(3,5);
+    printf ("%d %d", result[0],result[1]);
+    /*
     //debug
     shotgrid = create_shotgrid(ROW_SIZE, COLUMN_SIZE);
     shipgrid = place_ships(ROW_SIZE, COLUMN_SIZE, ship_count);
@@ -82,7 +107,8 @@ int main(int argc, const char * argv[]) {
     
     graph(COLUMN_SIZE, ROW_SIZE, shotgrid, shipgrid);
     
-    printf("Dumme svin!\n");
+    free_mem(shotgrid, shipgrid);
+    */
     return ERR_NONE;
     
 }
