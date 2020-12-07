@@ -51,28 +51,6 @@ char *create_shotgrid(short row_size, short column_size);
 char *place_ships(short row_size, short column_size, int ship_count);
 int test_shot(int *result, short row_size, short column_size, char *ship_grid);
 
-
-int *shoot_ship()
-{
-    int row;
-    char column;
-    int *choice;
-    choice = (int *) malloc(2*sizeof(int));
-    while(1){
-        printf("Where will you shoot? (1-10 / a-j)\n");
-        scanf("%d %c", &row, &column);
-        if (row >= 1 && row <= 10 && column >=97 && column < 107){
-            choice[0] = row-1;
-            choice[1] = column-97;
-            break;
-        }
-        printf("Invalid input!!!\n");
-    }
-    return choice;
-}
-
-
-
 int *shoot_ship(short row_size, short column_size)
 {
 	int row;
