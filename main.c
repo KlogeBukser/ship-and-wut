@@ -203,7 +203,9 @@ char *place_ships(short row_size, short column_size, int ship_count) {
 }
 
 //  free things
-void free_mem(char* shot_grid, char* ship_grid) {
+void free_mem(char *shot_grid, char *ship_grid) {
     free(shot_grid);
+    shot_grid = NULL;
     free(ship_grid);
+    ship_grid = NULL;
 }
